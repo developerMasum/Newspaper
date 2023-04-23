@@ -22,7 +22,7 @@ const Header = () => {
         <Button variant="warning">Latest </Button>
         <Marquee className="text-info">
           I can be a React component, multiple React components, or just some
-          text.
+          text. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique est assumenda sed numquam itaque natus nostrum officia illum modi magnam culpa consectetur quidem pariatur delectus ipsa, minima dolores blanditiis. Nesciunt?
         </Marquee>
       </div>
 

@@ -5,6 +5,7 @@ import Footer from '../Pages/Home/Shared/Header/Footer/Footer';
 import { Col, Container, Row } from 'react-bootstrap';
 import LeftMav from '../Pages/Home/Shared/Header/LeftNav/LeftMav';
 import RightNav from '../Pages/Home/Shared/RightNav/RightNav';
+import { Outlet } from 'react-router-dom';
 
 const Main = () => {
     return (
@@ -20,7 +21,9 @@ const Main = () => {
         <Col lg={3}> <LeftMav ></LeftMav>  </Col>
 
 
-        <Col lg={6}>Main Container  </Col>
+        <Col lg={6}>
+         <Outlet> </Outlet>
+            </Col>
 
 
         <Col lg={3}> <RightNav></RightNav> </Col>
