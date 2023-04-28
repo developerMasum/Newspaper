@@ -1,13 +1,22 @@
 import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { FaUserCircle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../Providers/AuthProvider';
 
 
 
 const NavigationBar = () => {
-    const {user} = useContext(AuthContext);
+    const {user,logOut} = useContext(AuthContext);
+    const navigate = useNavigate();
+   const handleLogOut =()=>{
+    logOut()
+    .then( result=>{
+      navigate('/')
+      console.log(result);
+    })
+    .catch(error=>console.log(error))
+   }
     return (
         <Container>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -32,7 +41,7 @@ const NavigationBar = () => {
             <Nav.Link eventKey={2} href="#memes">
            {
             user ? 
-            <Link to={'/register'}><Button variant="warning">Log out</Button> </Link>
+            <Link to={'/register'}><Button onClick={handleLogOut} variant="warning">Log out</Button> </Link>
             :
             <Link to={'/login'}> <Button variant="warning">Log in</Button></Link>
            }
